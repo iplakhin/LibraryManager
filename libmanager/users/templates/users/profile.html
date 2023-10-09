@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<h2 class="header">{{ title }}</h2>
+<div class="photo">
+    {% if user.photo %}
+        <img src="{{ user.photo.url }}", height="300", width="200">
+    {% endif %}
+</div>
+<div class="content">
+    <h2> {{user.fio}} </h2>
+    <p>Birthdate: {{user.birthdate}}</p>
+    <p>Registration date: {{user.reg_date}}</p>
+    <p>Email: {{user.contacts}}</p>
+    <hr>
+</div>
+{% endblock content%}

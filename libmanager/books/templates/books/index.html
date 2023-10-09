@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<div class="content">
+    <h1>Список книг в библиотеке</h1>
+    <table class="">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Total amount</th>
+        </tr>
+    {%for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.year }}</td>
+            <td>{{ book.total_amount }}</td>
+        </tr>
+    {%endfor%}
+    </table>
+</div>
+
+<div class="content">
+    <h1>Список журналов в библиотеке</h1>
+    <table class="">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Total amount</th>
+        </tr>
+    {%for m in magazines %}
+        <tr>
+            <td>{{ m.title }}</td>
+            <td>{{ m.year }}</td>
+            <td>{{ m.total_amount }}</td>
+        </tr>
+    {%endfor%}
+    </table>
+</div>
+{% endblock content %}
+

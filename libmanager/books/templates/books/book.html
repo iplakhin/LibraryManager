@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block header_menu %}
+  <div class="header-menu">
+    {% for m in menu %}
+      <a href="#">{{ m.name }}</a>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<h2 class="header">{{ title }}</h2>
+<div class="content">
+    <h2> {{book.title}} </h2>
+    <p>Author: {{book.author}}</p>
+    <p>Year: {{book.year}}</p>
+    <p>Total in library: {{book.total_amount}}</p>
+    <p>In stock: {{book.in_stock}}</p>
+    <p>Publishing house: {{book.pub_house}}</p>
+    <i>ISBN: {{book.isbn}}</i>
+    <hr>
+<a href="{% url 'delbook' %}"><button type="button">Удалить</button></a>
+</div>
+
+<div class="giveaway">
+    <h3>Выдать книгу читателю</h3>
+    <form method="post" id="uid" name="user">
+        {% csrf_token %}
+        <label>{{ form.label }}</label>{{ form }}
+        <button type="submit">Выдать</button>
+    </form>
+    <h3>{{ message }}</h3>
+</div>
+
+
+
+{% endblock content %}

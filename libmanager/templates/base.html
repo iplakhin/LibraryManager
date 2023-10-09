@@ -1,0 +1,77 @@
+<!DOCTYPE html>  <!-- %} {%   -->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css'%}">
+        <title>{{ title }}</title>
+</head>
+
+<body>
+
+{% block header_menu %}
+<div class="header">
+  <ul class="mainmenu">
+    <li><a href="{% url 'home'  %}">Home</a></li>
+    <li><a href="{% url 'findbook'  %}">Найти книгу</a></li>
+    <li><a href="{% url 'users'  %}">Читатели</a></li>
+    <li class="last"><a href="{% url 'register'  %}">Register</a> | <a href="{% url 'login'  %}">Читатели</a></li>
+  </ul>
+</div>
+{% endblock header_menu %}
+
+
+{% block sidebar %}
+<div class="left-menu">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+      <span class="fs-5 fw-semibold">Collapsible</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <a href="{% url 'home' %}">
+          <button type="button" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          Home
+          </button>
+        </a>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#books-collapse" aria-expanded="false">
+          Books
+        </button>
+        <div class="collapse" id="books-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'findbook' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Find</a></li>
+            <li><a href="{% url 'addbook' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Add new</a></li>
+            <li><a href="{% url 'delbook' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Delete</a></li>
+            <li><a href="{% url 'expired' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Expired</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#users-collapse" aria-expanded="false">
+          Users
+        </button>
+        <div class="collapse" id="users-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'finduser' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Find</a></li>
+            <li><a href="{% url 'adduser' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Add new</a></li>
+            <li><a href="{% url 'deluser' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Delete</a></li>
+            <li><a href="{% url 'debtors' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Debtors</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+{% endblock sidebar %}
+
+
+<div class="content">
+
+{% block content %}
+
+{% endblock content %}
+</div>
+
+</body>
+
+</html>

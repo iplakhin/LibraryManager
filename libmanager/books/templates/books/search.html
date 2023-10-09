@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="header">{{ title }}</h2>
+
+{% for cat in cats %}
+    <p><a href="{{ cat.get_absolute_url }}">{{cat.name}}</a></p>
+{% endfor %}
+
+{% for book in books %}
+    <p><a href="{{ book.get_absolute_url }}">{{book.title}}  {{ book.author }}, {{ book.year }}</a></p>
+{% endfor %}
+
+{% for user in users %}
+    <p><a href="{{ user.get_absolute_url }}">{{user.fio}}  {{ user.birthdate }}</a></p>
+
+{% endfor %}
+
+{% endblock content %}

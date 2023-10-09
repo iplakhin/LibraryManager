@@ -1,0 +1,88 @@
+body {
+    background: #f0ce73;
+}
+
+.header {
+    background: #a68221;
+    height: 60px;
+
+}
+
+ul.mainmenu {
+    list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	color: #f0ce73;
+	font-size: 20px;
+	overflow: hidden;
+}
+
+ul.mainmenu li {
+	float: left;
+	margin: 18px 40px 0 30px;
+}
+
+ul.mainmenu li.last {float: right;}
+
+.left-menu {
+    float: left;
+    background: #a68221;
+    width: 10%;
+    padding: 1%;
+    height: 90vh;
+    color: #000;
+    border-right: 2.5px solid #b8963b;
+    margin: 5px
+
+}
+
+.content {
+    width: 350px
+    height: 90vh;
+    float: left;
+    margin: 5px;
+    padding: 2.5px;
+    font-family: Arial, Tahoma;
+}
+
+h2.header {
+    border-bottom: 1px solid #b8963b
+}
+
+.form-input {
+    padding: 2px 3px;
+    margin: 2px 0;
+    width: 450px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
+}
+
+table, th, tr, td {
+    border: 1px solid #000;
+    text-align: left;
+}
+
+.giveaway {
+    width: 200px;
+    height: 150px;
+    align: right
+    border: 1px solid #000
+}
